@@ -20,17 +20,57 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Learn MoreInteractive Scoreboard and Tournament Management System
 
-To learn more about Next.js, take a look at the following resources:
+Overview
+This project is an interactive scoreboard and tournament management system designed for table foosball competitions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+It allows users to track match results, view tournament standings in real-time, and manage teams and matches through a user-friendly interface.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Built with React and integrated with Airtable for real-time data storage and updates, this system showcases advanced frontend development techniques and responsive design principles.
 
-## Deploy on Vercel
+Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> Real-time scoreboard updates
+> Tournament standings and leaderboards
+> Team and match management interface
+> Secure admin area for result updates
+> Responsive design for desktop and mobile devices
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Technology Stack
+Frontend: React (Create React App), SCSS for styling
+Backend: Airtable as a backend service for storing match results, team information, and standings
+Deployment:Vercel
+
+Getting Started
+Prerequisites
+Node.js (version X.X or higher)
+npm (version X.X or higher)
+Installation
+Clone the repository:
+
+git clone https://github.com/danieldraganweb/signifly-interview-2024
+Navigate to the project directory:
+
+cd signifly-interview-2024
+Install NPM packages:
+
+npm install
+Set up your Airtable API keys and base ID in a .env file:
+plaintext
+
+REACT_APP_AIRTABLE_API_KEY=your_api_key
+REACT_APP_AIRTABLE_BASE_ID=your_base_id
+Running the Application
+To start the application in development mode, run:
+
+Copy code
+npm start
+Open http://localhost:3000 to view it in the browser.
+Usage
+Provide instructions on how to use the application, including how to update scores, manage teams, and interpret the leaderboard.
+
+Contact
+Your Name - email@example.com
+
+Project Link: https://github.com/danieldraganweb/signifly-interview-2024
