@@ -1,0 +1,43 @@
+@use "./app/styles/base/_typography" as *;
+@use "./app/styles/base/_variables" as *;
+
+// Path: app/components/Header/Navbar.module.scss
+
+.navbar {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(to right,
+            rgb(var(--background-start-rgb)),
+            rgb(var(--background-end-rgb)));
+    border-bottom: 1px solid rgba(var(--foreground-rgb), 0.1);
+    box-shadow: 0 2px 4px rgba(var(--foreground-rgb), 0.1);
+
+    ul {
+        width: 100%;
+        max-width: 1440px;
+        gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+
+    li {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: color 0.2s;
+
+        &:hover {
+            color: rgba(var(--foreground-rgb), 1);
+        }
+    }
+}
