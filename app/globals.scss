@@ -51,11 +51,19 @@
 
 html,
 body {
+  width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+  margin: 0 auto;
+
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom,
       transparent,

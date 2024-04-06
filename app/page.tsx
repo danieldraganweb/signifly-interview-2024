@@ -5,7 +5,11 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <h1>Place your bets</h1>
-      <h1>Signifly Interview Project</h1>
+      <div className="button-wrapper">
+        <button className={styles.button}>+</button>
+        <button className={styles.button}>-</button>
+      </div>
+      <button className={styles.button}>Reset</button>
     </main>
   );
 }

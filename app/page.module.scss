@@ -3,8 +3,26 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 1440px;
+
+  button {
+    background: var(--primary-glow);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+
+    &:hover {
+      background: var(--secondary-glow);
+    }
+
+  }
 }
 
 /* Enable hover only on non-touch devices */
