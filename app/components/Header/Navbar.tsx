@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                 src="/football-stadium.svg"
                 alt="logo"
                 width={100}
-                height={70}
+                height={100}
                 priority={true}
                 style={{
                   objectFit: "contain",

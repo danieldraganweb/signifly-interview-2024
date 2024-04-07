@@ -49,9 +49,6 @@ export type MatchFields = {
   "Points Awarded Team A": number;
   "Points Awarded Team B": number;
   "Winner": "Team A" | "Team B";
-  
-  
- 
   id: string;
   createdTime: string;
   fields: MatchFields;

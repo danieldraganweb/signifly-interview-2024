@@ -8,27 +8,151 @@
     max-width: 1440px;
 }
 
-/* scoreboard.module.scss */
+
+
 .scoreboard {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 60px;
-    padding: 20px;
     list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 1000px;
 }
 
 .match {
-    flex: 1 1 300px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    // flex: 1 1 1200px;
     /* Flex items can grow and shrink, but start at 250px */
     border: 2px solid #ccc;
     padding: 30px;
     border-radius: 5px;
-    width: 100%;
-    max-width: 300px;
+    // width: 100%;
+    // max-width: 1200px;
     text-decoration: none;
-    box-shadow: 0 0 10px rgba(241, 241, 241, 0.1);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+    h2 {
+        color: rgb(25, 122, 61);
+        font-size: 80px;
+        margin: 10px;
+        text-align: left;
+    }
+
+    h3 {
+        color: whitesmoke;
+        font-size: 30px;
+        margin: 10px;
+        text-align: left;
+    }
 }
+
+.matchDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    gap: 100px;
+}
+
+.teamDetails,
+.scoreDetails {
+    flex: 1;
+}
+
+.teamDetails {
+    // Styling for team details
+    flex: 0 1 auto; // Allows this section to not grow or shrink as much as the score details
+
+    h2 {
+        color: rgb(25, 122, 61);
+        font-size: 30px;
+        // margin: 10px;
+
+    }
+}
+
+.scoreDetails {
+    // Styling specifically for the score, may include larger text, etc.
+    font-weight: bold;
+    flex: 0 1 auto; // Allows this section to not grow or shrink as much as the team details
+    font-size: 40px;
+}
+
+// /* scoreboard.module.scss */
+// .scoreboard {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: center;
+//     flex-wrap: wrap;
+//     gap: 60px;
+//     padding: 20px;
+//     list-style-type: none;
+// }
+
+// .match {
+//     flex: 1 1 800px;
+//     /* Flex items can grow and shrink, but start at 250px */
+//     border: 2px solid #ccc;
+//     padding: 30px;
+//     border-radius: 5px;
+//     width: 100%;
+//     max-width: 800px;
+//     text-decoration: none;
+//     box-shadow: 0 0 10px rgba(241, 241, 241, 0.1);
+//     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+// }
+
+// .scoreboard {
+//     list-style-type: none;
+//     padding: 0;
+//     width: 100%;
+//     max-width: 1440px;
+// }
+
+// .match {
+//     flex: 1 1 1000px;
+//     /* Flex items can grow and shrink, but start at 250px */
+//     border: 2px solid #ccc;
+//     padding: 30px;
+//     border-radius: 5px;
+//     width: 100%;
+//     margin-bottom: 30px;
+//     max-width: 1000px;
+//     text-decoration: none;
+//     box-shadow: 0 0 10px rgba(241, 241, 241, 0.1);
+//     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+//     h2 {
+//         color: rgb(25, 122, 61);
+//         font-size: 30px;
+//         margin: 10px;
+//     }
+
+//     p {
+//         font-size: 20px;
+//         margin: 10px;
+//         // padding-left: 20px;
+//     }
+// }
+
+// .teamInfo {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     margin-bottom: 10px;
+
+// Remove the empty ruleset
+// Styling for the team name and players container
+
+
+// & div {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     align-items: center;
+//     margin-bottom: 10px;
+//     background-color: aquamarine;
+
+// }

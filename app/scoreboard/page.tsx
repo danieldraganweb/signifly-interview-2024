@@ -20,27 +20,41 @@ export default function Scoreboard() {
   // Adjusted to display match information instead
   return (
     <div className={styles.main}>
-      <h1>Scoreboard</h1>
-      {sortedMatches.length > 0 ? (
-        <ul className={styles.scoreboard}>
-          {sortedMatches.map((match) => (
-            <li key={match.id} className={styles.match}>
-              <h2>{match.fields.Name}</h2>
-              <p>Team A: {match.fields["Team Name (from Team A)"]}</p>
-              <p>Player One: {match.fields["Player 1 (from Team A)"]}</p>
-              <p>Player Two: {match.fields["Player 2 (from Team A)"]}</p>
-              <p>Score: {match.fields["Team A Score"]}</p>
-              <p>Team B: {match.fields["Team Name (from Team B)"]}</p>
-              <p>Player One: {match.fields["Player 1 (from Team B)"]}</p>
-              <p>Player Two: {match.fields["Player 2 (from Team B)"]}</p>
-              <p>Score: {match.fields["Team B Score"]}</p>
-              <p>Winner: {match.fields.Winner}</p>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No match data available.</p>
-      )}
+      <h1>Match Scoreboard</h1>
+      <ul className={styles.scoreboard}>
+        {sortedMatches.map((match) => (
+          <li key={match.id} className={styles.match}>
+            <h3>{match.fields.Name}</h3>
+            <div className={styles.matchDetails}>
+              {/* Team A details */}
+              <div className={styles.teamDetails}>
+                <h2>{match.fields["Team Name (from Team A)"]}</h2>
+                <div>
+                  <p>P1: {match.fields["Player 1 (from Team A)"]}</p>
+                  <p>P1: {match.fields["Player 2 (from Team A)"]}</p>
+                </div>
+              </div>
+              {/* Score details */}
+              <div className={styles.scoreDetails}>
+                <p>
+                  {match.fields["Team A Score"]} -{" "}
+                  {match.fields["Team B Score"]}
+                </p>
+              </div>
+
+              {/* Team B details */}
+              <div className={styles.teamDetails}>
+                <h2>{match.fields["Team Name (from Team B)"]}</h2>
+                <div>
+                  <p>P1: {match.fields["Player 1 (from Team B)"]}</p>
+                  <p>P1: {match.fields["Player 2 (from Team B)"]}</p>
+                </div>
+              </div>
+            </div>
+            {/* <p>Winner: {match.fields.Winner}</p> */}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
