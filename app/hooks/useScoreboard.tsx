@@ -1,37 +1,34 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Team } from "../types";
+import { MatchFields } from "../types";
 import Airtable from "airtable";
 
 // Airtable Configuration
-
+// console.log("Airtable API Key:", process.env.NEXT_PUBLIC_AIRTABLE_API_KEY);
 Airtable.configure({ apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY || "" });
 const table = Airtable.base(
-  process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID_TEAMS_TABLE || ""
-).table("Teams");
+  process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID || ""
+).table("Scoreboard");
 
 // Custom Hook
-export default function useTeams() {
-  const [teams, setTeams] = useState<Team[]>([]);
+export default function useScoreboard() {
+  const [matches, setMatches] = useState<MatchFields[]>([]);
   const [loading, setLoading] = useState(true);
 
   // Fetch data from Airtable
-
-  const getTeams = async () => {
+  const getMatches = async () => {
     setLoading(true);
-    const teams = await table.select().all();
-    setTeams(teams as any);
+    const matches = await table.select().all();
+    setMatches(matches as any);
     setLoading(false);
-    console.log(teams);
+    console.log(matches);
   };
 
   // Fetch data when the component mounts
-
   useEffect(() => {
-    getTeams();
+    getMatches();
   }, []);
 
-  return { teams, loading };
+  return { matches, loading };
 }
-
 // Path: app/Scoreboard/page.tsx

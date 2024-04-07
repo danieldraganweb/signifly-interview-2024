@@ -1,42 +1,44 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 0;
     width: 100%;
-    max-width: 1440px;
+    max-width: 1440px; // Limits the width for better readability
+    margin: 0 auto; // Centers the content
+    padding: 20px;
+    background-color: #f9f9f9; // A light background to offset the leaderboard
+    border-radius: 8px; // Softens the edges
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // A subtle shadow for depth
+    margin: 50px 50px; // Adds space around the container
+
+    h1 {
+        text-align: center; // Centers the heading
+        margin-bottom: 20px; // Adds space below the heading
+        color: #333;
+    }
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    width: 100%;
-    max-width: 700px;
-}
+.leaderboard {
 
-.header {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    color: #000;
-    background-color: #ffffff;
-    font-weight: bold;
-    border-radius: 3px;
-    margin-bottom: 10px;
-}
+    list-style-type: none; // Removes default list styling
+    padding: 0;
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border: 1px solid #585353;
-    border-radius: 3px;
-    margin-bottom: 10px;
+    .team {
+        background-color: #ffffff; // White background for each team item
+        border: 1px solid #ddd; // A subtle border
+        padding: 15px;
+        margin-bottom: 10px; // Spacing between team items
+        border-radius: 5px; // Rounded corners
 
-    &:nth-child(even) {
-        background-color: #625959;
+        h2 {
+            margin-top: 0;
+            color: #333; // Darker text for contrast
+        }
+
+        p {
+            margin: 5px 0; // Vertical spacing between paragraphs
+            color: #666; // Lighter text for less emphasis
+        }
+
+        &:last-child {
+            margin-bottom: 0; // Removes margin from the last item
+        }
     }
 }

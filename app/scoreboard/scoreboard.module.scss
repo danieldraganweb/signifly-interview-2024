@@ -9,33 +9,26 @@
 }
 
 /* scoreboard.module.scss */
-.container {
+.scoreboard {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    padding: 20px;
+    list-style-type: none;
+}
+
+.match {
+    flex: 1 1 300px;
+    /* Flex items can grow and shrink, but start at 250px */
+    border: 2px solid #ccc;
+    padding: 30px;
+    border-radius: 5px;
     width: 100%;
-    max-width: 200px;
-}
-
-.header {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    color: #000;
-    background-color: #ffffff;
-    font-weight: bold;
-    border-radius: 3px;
-    margin-bottom: 10px;
-}
-
-.row {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    border: 1px solid #585353;
-    border-radius: 3px;
-    margin-bottom: 10px;
-
-    &:nth-child(even) {
-        background-color: #625959;
-    }
+    max-width: 300px;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(241, 241, 241, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }

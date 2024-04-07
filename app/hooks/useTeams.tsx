@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Team } from "../types";
+import { TeamFields } from "../types";
 import Airtable from "airtable";
 
 // Airtable Configuration
@@ -12,11 +12,10 @@ const table = Airtable.base(
 
 // Custom Hook
 export default function useTeams() {
-  const [teams, setTeams] = useState<Team[]>([]);
+  const [teams, setTeams] = useState<TeamFields[]>([]);
   const [loading, setLoading] = useState(true);
 
   // Fetch data from Airtable
-
   const getTeams = async () => {
     setLoading(true);
     const teams = await table.select().all();
@@ -26,12 +25,10 @@ export default function useTeams() {
   };
 
   // Fetch data when the component mounts
-
   useEffect(() => {
     getTeams();
   }, []);
 
   return { teams, loading };
 }
-
 // Path: app/Scoreboard/page.tsx
