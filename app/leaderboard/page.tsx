@@ -3,41 +3,50 @@
 import React from "react";
 import styles from "./leaderboard.module.scss";
 import useTeams from "../hooks/useTeams";
-// Assuming the 'Team' type is correctly imported and used
+import { TeamFields } from "../types";
+import Image from "next/image";
 
 export default function Leaderboard() {
-  const { teams, loading } = useTeams();
+  const { teams, loading } = useTeams(); // Assuming useTeams returns the correct type
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  const sortedTeams = teams.sort((a, b) => {
-    // Sort teams by total points
-    return b.fields["Total points"] - a.fields["Total points"];
-  });
+  // Assuming `teams` directly returns an array of objects conforming to TeamFields type
+  const sortedTeams = teams.sort(
+    (a, b) => b.fields["Total points"] - a.fields["Total points"]
+  );
 
   return (
-    <div className={styles.main}>
+    <div className={styles.leaderboardContainer}>
+      <Image
+        src="/football-winner.svg"
+        alt="Leaderboard"
+        width={200}
+        height={200}
+      />
       <h1>Leaderboard</h1>
-      {sortedTeams.length > 0 ? (
-        <ul className={styles.leaderboard}>
-          {sortedTeams.map((team) => (
-            <li key={team.id} className={styles.team}>
-              <h2>{team.fields["Team Name"]}</h2>
-              <p>
-                Players: {team.fields["Player 1"]} and {team.fields["Player 2"]}
-              </p>
-              <p>Total Points: {team.fields["Total points"]}</p>
-              <p>Total Matches Played: {team.fields["Total Matches Played"]}</p>
-              <p>Wins: {team.fields.Wins}</p>
-              <p>Losses: {team.fields.Losses}</p>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No team data available.</p>
-      )}
+      <div className={styles.leaderboardGrid}>
+        <div className={styles.gridHeader}>
+          <span>#Rank</span>
+          <span>Team</span>
+          <span>Matches Played</span>
+          <span>Won</span>
+          <span>Lost</span>
+          <span>Points</span>
+        </div>
+        {sortedTeams.map((team, index) => (
+          <div className={styles.gridRow} key={team.id}>
+            <span>{index + 1}</span>
+            <span>{team.fields["Team Name"]}</span>
+            <span>{team.fields["Total Matches Played"]}</span>
+            <span>{team.fields.Wins}</span>
+            <span>{team.fields.Losses}</span>
+            <span>{team.fields["Total points"]}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

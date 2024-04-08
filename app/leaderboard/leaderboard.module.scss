@@ -1,47 +1,67 @@
 @use "./app/styles/base/_typography" as *;
 @use "./app/styles/base/_variables" as *;
 
-.main {
+.leaderboardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    background-color: transparent; // Light background for the container
     width: 100%;
-    max-width: 1440px; // Limits the width for better readability
-    margin: 0 auto; // Centers the content
-    padding: 20px;
-    background-color: #f9f9f9; // A light background to offset the leaderboard
-    border-radius: 8px; // Softens the edges
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // A subtle shadow for depth
-    // margin: 50px 50px; // Adds space around the container
+}
 
-    h1 {
-        text-align: center; // Centers the heading
-        margin-bottom: 20px; // Adds space below the heading
-        color: #333;
+.leaderboardGrid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto; // Adjust based on your layout
+    gap: 50px;
+    width: 100%;
+    max-width: 1000px;
+    background-color: transparent; // White background for the grid area
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+    border-radius: 8px; // Rounded corners for modern look
+    margin-top: 2em;
+}
+
+.gridHeader {
+    display: contents;
+    background-color: #004d40; // Dark teal background for header
+    color: #ffffff; // White text for contrast
+    padding: 15px 0;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px 8px 0 0; // Rounded corners for top edge
+    border: 1px solid #fdfdfd; // Match the background color for seamless look
+}
+
+.gridRow {
+    display: contents;
+
+    &:nth-child(odd) {
+        background-color: #e0f2f1; // Light teal background for rows
+    }
+
+    span {
+        padding: 10px;
+        text-align: center;
+        font-size: 1em;
+
+        &:first-child {
+            font-weight: bold; // Make the rank stand out
+        }
     }
 }
 
-.leaderboard {
+@media screen and (max-width: 768px) {
+    .leaderboardGrid {
+        grid-template-columns: repeat(3, 1fr); // Adjust for smaller screens
+        gap: 5px;
+    }
 
-    list-style-type: none; // Removes default list styling
-    padding: 0;
-
-    .team {
-        background-color: #ffffff; // White background for each team item
-        border: 1px solid #ddd; // A subtle border
-        padding: 15px;
-        margin-bottom: 10px; // Spacing between team items
-        border-radius: 5px; // Rounded corners
-
-        h2 {
-            margin-top: 0;
-            color: #333; // Darker text for contrast
-        }
-
-        p {
-            margin: 5px 0; // Vertical spacing between paragraphs
-            color: #666; // Lighter text for less emphasis
-        }
-
-        &:last-child {
-            margin-bottom: 0; // Removes margin from the last item
+    // Optionally hide less critical data on smaller screens
+    .gridHeader,
+    .gridRow {
+        span:nth-last-child(n+4):not(:first-child) {
+            display: none;
         }
     }
 }
