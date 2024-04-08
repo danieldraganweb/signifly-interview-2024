@@ -16,7 +16,7 @@
     margin-bottom: 1rem;
     font-family: var(--font-press-start-2p), monospace;
     padding: 2rem 0;
-    animation: pulse 1.5s infinite smooth;
+    animation: pulse 1.5s infinite;
   }
 }
 
@@ -122,7 +122,7 @@
   .main {
     h1 {
       font-size: 3em;
-      animation: pulse 1.5s infinite smooth;
+      animation: pulse 1.5s infinite;
     }
   }
 
