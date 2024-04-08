@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 10px;
     width: 100%;
     max-width: 1440px;
 
@@ -27,7 +27,7 @@
 .matchCard {
     border: 1px solid #ccc;
     border-radius: 4px;
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     margin-bottom: 2rem;
     width: 100%;
     max-width: 1440px;
@@ -50,7 +50,7 @@
     flex: 1;
     font-weight: bold;
     color: #4c8527;
-    font-size: $font-size-tablet;
+    font-size: $font-size-mobile-wide;
     text-align: center;
 }
 
@@ -79,6 +79,7 @@
 .playersTeamA p,
 .playersTeamB p {
     text-align: left;
+    font-size: $font-size-mobile;
 }
 
 @media screen and (min-width: 768px) {
