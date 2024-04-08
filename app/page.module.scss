@@ -16,7 +16,11 @@
     margin-bottom: 1rem;
     font-family: var(--font-press-start-2p), monospace;
     padding: 2rem 0;
-    animation: pulse 1.5s infinite;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+
+  .paused {
+    animation-play-state: paused;
   }
 }
 
@@ -122,27 +126,12 @@
   .main {
     h1 {
       font-size: 3em;
-      animation: pulse 1.5s infinite;
     }
   }
 
   .resetButton {
     button {
       padding: 20px 50px;
-    }
-  }
-
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-
-    50% {
-      transform: scale(1.1);
-    }
-
-    100% {
-      transform: scale(1);
     }
   }
 }
