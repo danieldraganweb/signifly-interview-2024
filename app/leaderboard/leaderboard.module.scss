@@ -1,3 +1,6 @@
+@use "./app/styles/base/_typography" as *;
+@use "./app/styles/base/_variables" as *;
+
 .main {
     width: 100%;
     max-width: 1440px; // Limits the width for better readability

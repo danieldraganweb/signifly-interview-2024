@@ -1,81 +1,134 @@
+@use "./app/styles/base/_typography" as *;
+@use "./app/styles/base/_variables" as *;
+
 .main {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 2rem 0;
+    padding: 0;
+    width: 100%;
+    max-width: 1440px;
+
+    h1 {
+        color: #4c8527;
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+}
+
+.scoreboard {
+    list-style: none;
+    padding: 0;
     width: 100%;
     max-width: 1440px;
 }
 
-
-
-.scoreboard {
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-    max-width: 1000px;
-}
-
-.match {
+.matchCard {
     border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    // flex: 1 1 1200px;
-    /* Flex items can grow and shrink, but start at 250px */
-    border: 2px solid #ccc;
-    padding: 30px;
-    border-radius: 5px;
-    // width: 100%;
-    // max-width: 1200px;
-    text-decoration: none;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-
-    h2 {
-        color: rgb(25, 122, 61);
-        font-size: 80px;
-        margin: 10px;
-        text-align: left;
-    }
-
-    h3 {
-        color: whitesmoke;
-        font-size: 30px;
-        margin: 10px;
-        text-align: left;
-    }
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 1440px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.matchDetails {
+.matchHeader {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.teamAndScore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.teamName {
+    flex: 1;
+    font-weight: bold;
+    color: #4c8527;
+    font-size: $font-size-tablet;
+    text-align: center;
+}
+
+.matchScore {
+    flex: 0 1 auto;
+    font-family: var(--font-orbitron), sans-serif;
+    font-size: $font-size-mobile-wide;
+    margin: 0 20px; // Ensures space around the score
+    text-align: center;
+}
+
+.playerNames {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    gap: 100px;
+    width: 100%;
 }
 
-.teamDetails,
-.scoreDetails {
+.playersTeamA,
+.playersTeamB {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.teamDetails {
-    // Styling for team details
-    flex: 0 1 auto; // Allows this section to not grow or shrink as much as the score details
+.playersTeamA p,
+.playersTeamB p {
+    text-align: left;
+}
 
-    h2 {
-        color: rgb(25, 122, 61);
-        font-size: 30px;
-        // margin: 10px;
-
+@media screen and (min-width: 768px) {
+    .main {
+        padding: 20px;
     }
-}
 
-.scoreDetails {
-    // Styling specifically for the score, may include larger text, etc.
-    font-weight: bold;
-    flex: 0 1 auto; // Allows this section to not grow or shrink as much as the team details
-    font-size: 40px;
-    font-family: var(--font-orbitron), sans-serif;
+    .scoreboard {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-gap: 20px; // Adjust based on your spacing preference
+        justify-content: center;
+        align-items: start;
+    }
+
+    .matchCard {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0; // Remove margin-bottom for grid layout
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .matchHeader,
+    .teamName {
+        font-size: $font-size-desktop; // Adjust the font size for larger screens
+    }
+
+    .matchScore,
+    .playerNames {
+        font-size: $font-size-mobile-wide; // Adjust the font size for larger screens
+    }
+
+    .teamName,
+    .matchScore {
+        flex: none; // Override previous flex settings
+        margin: 0 10px; // Reduced margin for grid layout
+    }
+
+    .playerNames {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .playersTeamA,
+    .playersTeamB {
+        align-items: center;
+        text-align: center; // Ensure text alignment is consistent in the grid layout
+    }
 }
