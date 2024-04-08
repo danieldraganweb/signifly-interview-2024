@@ -6,15 +6,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
+
   width: 100%;
   max-width: 1440px;
 
   h1 {
-    font-size: 3.5rem;
+    font-size: 2em;
     font-weight: 700;
     margin-bottom: 1rem;
     font-family: var(--font-press-start-2p), monospace;
+    padding: 2rem 0;
+    animation: pulse 1.5s infinite smooth;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -102,28 +118,43 @@
   text-align: center;
 }
 
-// /* Enable hover only on non-touch devices */
-// @media (hover: hover) and (pointer: fine) {}
+@media screen and (min-width: 768px) {
+  .main {
+    h1 {
+      font-size: 3em;
+      animation: pulse 1.5s infinite smooth;
+    }
+  }
 
-// @media (prefers-reduced-motion) {}
+  // .container {
+  //   padding: 2rem;
+  // }
 
-// /* Mobile */
-// @media (max-width: 700px) {
-//   .content {
-//     padding: 4rem;
-//   }
+  // .wrapper {
+  //   padding: 2rem;
+  // }
 
-//   .grid {
-//     grid-template-columns: 1fr;
-//     margin-bottom: 120px;
-//     max-width: 320px;
-//     text-align: center;
-//   }
-// }
+  // .buttonWrapper {
+  //   padding: 2rem;
+  // }
 
-// /* Tablet and Smaller Desktop */
-// @media (min-width: 701px) and (max-width: 1120px) {
-//   .grid {
-//     grid-template-columns: repeat(2, 50%);
-//   }
-// }
+  .resetButton {
+    button {
+      padding: 20px 50px;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+}
