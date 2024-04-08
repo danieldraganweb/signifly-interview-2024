@@ -1,11 +1,10 @@
 "use client";
 import React from "react";
 import styles from "./scoreboard.module.scss";
-import useScoreboard from "../hooks/useScoreboard"; // Ensure this is the correct path
-// import { MatchFields, MatchRecord, ScoreboardResponse } from "../types"; // Import the necessary types
+import useScoreboard from "../hooks/useScoreboard";
 
 export default function Scoreboard() {
-  const { matches, loading } = useScoreboard(); // Adjusted to match the hook's return structure
+  const { matches, loading } = useScoreboard();
 
   if (loading) {
     return <div>Loading...</div>;
@@ -17,6 +16,7 @@ export default function Scoreboard() {
 
     return matchNumberA - matchNumberB;
   });
+
   // Adjusted to display match information instead
   return (
     <div className={styles.main}>

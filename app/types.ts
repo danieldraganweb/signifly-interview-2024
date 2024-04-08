@@ -58,3 +58,9 @@ export type ScoreboardResponse = {
   records: MatchRecord[];
   offset: string; // Useful for pagination if your API response includes it
 };
+
+export type ButtonProps = {
+  children: React.ReactNode;
+  onClick?: () => void;
+  disabled?: boolean;
+};

@@ -1,0 +1,8 @@
+@use "./app/styles/base/_typography" as *;
+@use "./app/styles/base/_variables" as *;
+
+// Path: app/components/Buttons/Button.module.scss
+
+.button {
+    cursor: pointer;
+}
