@@ -37,11 +37,11 @@ export default function Home() {
   const formatScore = (score: number) => score.toString().padStart(2, "0");
   return (
     <main className={styles.main}>
-      <h1>Place your bets</h1>
+      <h1>Insert coin</h1>
       {winningTeam && <div className={styles.winnerMessage}>{winningTeam}</div>}
       <div className={styles.container}>
         <div className={styles.wrapper}>
-          <h2>Team A</h2>
+          <h3>Team A</h3>
           <h2>{formatScore(teamAScore)}</h2>{" "}
           {/* Use formatScore to display the score */}
           <div className={styles.buttonWrapper}>
@@ -55,7 +55,7 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.wrapper}>
-          <h2>Team B</h2>
+          <h3>Team B</h3>
           <h2>{formatScore(teamBScore)}</h2>{" "}
           {/* Use formatScore to display the score */}
           <div className={styles.buttonWrapper}>
@@ -69,7 +69,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div>
+      <div className={styles.resetButton}>
         <Button onClick={handleReset}>Reset</Button>
       </div>
     </main>

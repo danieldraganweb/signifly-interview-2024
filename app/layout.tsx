@@ -1,9 +1,30 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Orbitron, Kalam, Press_Start_2P } from "next/font/google";
 import "./globals.scss";
 import Navbar from "./components/Header/Navbar";
+import { start } from "repl";
+// import Head from "next/head";
 
-const inter = Inter({ subsets: ["latin"] });
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  variable: "--font-orbitron",
+});
+
+const kalam = Kalam({
+  subsets: ["latin"],
+  weight: "300",
+  display: "swap",
+  variable: "--font-kalam",
+});
+
+const press2p = Press_Start_2P({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-press-start-2p",
+});
 
 export const metadata: Metadata = {
   title: "Interview Next App",
@@ -16,11 +37,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <>
+      <html
+        lang="en"
+        className={`${kalam.variable} ${orbitron.variable} ${press2p.variable}`}
+      >
+        <body>
+          <Navbar />
+          {children}
+        </body>
+      </html>
+    </>
   );
 }
