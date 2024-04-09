@@ -89,6 +89,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
+        <h2 className={styles.vs}>VS</h2>
         <div className={styles.wrapper}>
           <h3>Team B</h3>
           <select

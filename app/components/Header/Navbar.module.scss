@@ -17,9 +17,9 @@
     h1 {
         font-size: 2em;
         font-weight: 700;
-        color: rgb(255, 255, 255);
+        color: $primary-color;
         text-transform: uppercase;
-        margin: 2rem 0 0 0;
+        margin: 2rem 0;
         text-align: center;
         animation: slideIn 1s ease-in-out;
     }
@@ -39,7 +39,7 @@
     width: 100%;
     max-width: 1440px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     align-self: center;
