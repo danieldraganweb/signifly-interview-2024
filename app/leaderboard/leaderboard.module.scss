@@ -6,62 +6,59 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: transparent; // Light background for the container
+    background-color: transparent;
     width: 100%;
 }
 
 .leaderboardGrid {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto; // Adjust based on your layout
-    gap: 50px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    max-width: 1000px;
-    background-color: transparent; // White background for the grid area
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
-    border-radius: 8px; // Rounded corners for modern look
+    max-width: 95%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
     margin-top: 2em;
 }
 
-.gridHeader {
-    display: contents;
-    background-color: #004d40; // Dark teal background for header
-    color: #ffffff; // White text for contrast
-    padding: 15px 0;
-    font-weight: bold;
+.gridHeader,
+.gridRow {
+    display: flex;
+    justify-content: space-between;
     text-align: center;
-    border-radius: 8px 8px 0 0; // Rounded corners for top edge
-    border: 1px solid #fdfdfd; // Match the background color for seamless look
+    padding: 15px 10px;
+}
+
+.gridHeader {
+    background-color: #4c8527;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .gridRow {
-    display: contents;
-
-    &:nth-child(odd) {
-        background-color: #e0f2f1; // Light teal background for rows
-    }
-
-    span {
-        padding: 10px;
-        text-align: center;
-        font-size: 1em;
-
-        &:first-child {
-            font-weight: bold; // Make the rank stand out
-        }
+    &:nth-child(even) {
+        background-color: #212121;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .leaderboardGrid {
-        grid-template-columns: repeat(3, 1fr); // Adjust for smaller screens
-        gap: 5px;
+.gridRow span,
+.gridHeader span {
+    flex: 1;
+
+    &:nth-child(1) {
+        flex: 0.5;
     }
 
-    // Optionally hide less critical data on smaller screens
-    .gridHeader,
-    .gridRow {
-        span:nth-last-child(n+4):not(:first-child) {
-            display: none;
-        }
+    // Rank might not need as much space
+    &:nth-child(6) {
+        flex: 1.5;
+    }
+
+    // Points might need more space
+}
+
+@media screen and (min-width: 768px) {
+    .leaderboardGrid {
+        max-width: 1200px; // Or any max-width you find appropriate for larger screens
     }
 }

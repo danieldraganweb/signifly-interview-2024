@@ -29,16 +29,16 @@ export default function Leaderboard() {
       <h1>Leaderboard</h1>
       <div className={styles.leaderboardGrid}>
         <div className={styles.gridHeader}>
-          <span>#Rank</span>
-          <span>Team</span>
-          <span>Matches Played</span>
-          <span>Won</span>
-          <span>Lost</span>
+          <span>#R</span>
+          <span>T</span>
+          <span>M. P.</span>
+          <span>W</span>
+          <span>L</span>
           <span>Points</span>
         </div>
         {sortedTeams.map((team, index) => (
           <div className={styles.gridRow} key={team.id}>
-            <span>{index + 1}</span>
+            <span>#{index + 1}</span>
             <span>{team.fields["Team Name"]}</span>
             <span>{team.fields["Total Matches Played"]}</span>
             <span>{team.fields.Wins}</span>
