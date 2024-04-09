@@ -3,7 +3,6 @@
 import React from "react";
 import styles from "./leaderboard.module.scss";
 import useTeams from "../hooks/useTeams";
-import { TeamFields } from "../types";
 import Image from "next/image";
 
 export default function Leaderboard() {
