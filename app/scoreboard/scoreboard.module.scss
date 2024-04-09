@@ -13,7 +13,13 @@
     h1 {
         color: #4c8527;
         font-size: 40px;
-        margin-bottom: 30px;
+        // margin-bottom: 30px;
+    }
+
+    img {
+        width: 256px;
+        height: auto;
+        padding: 2em;
     }
 }
 
@@ -64,19 +70,39 @@
 
 .playerNames {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
+    gap: 6em;
 }
 
-.playersTeamA,
+.playersTeamA {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 1em;
+
+}
+
 .playersTeamB {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 1em;
 }
 
-.playersTeamA p,
+.playersTeamA p {
+    text-align: left;
+    font-size: $font-size-mobile;
+}
+
 .playersTeamB p {
     text-align: left;
     font-size: $font-size-mobile;
@@ -129,7 +155,8 @@
 
     .playersTeamA,
     .playersTeamB {
-        align-items: center;
+        padding-left: 0.5em;
+        align-items: flex-start;
         text-align: center; // Ensure text alignment is consistent in the grid layout
     }
 }
