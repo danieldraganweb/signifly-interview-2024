@@ -5,9 +5,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
     background-color: transparent;
     width: 100%;
+
+    h1 {
+        color: #4c8527;
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
 }
 
 .leaderboardGrid {
@@ -18,7 +23,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    margin-top: 2em;
+    padding-bottom: 10rem;
 }
 
 .gridHeader,

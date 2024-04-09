@@ -19,13 +19,14 @@ export default function Leaderboard() {
 
   return (
     <div className={styles.leaderboardContainer}>
+      <h1>Leaderboard</h1>
       <Image
         src="/football-winner.svg"
         alt="Leaderboard"
         width={200}
         height={200}
       />
-      <h1>Leaderboard</h1>
+
       <div className={styles.leaderboardGrid}>
         <div className={styles.gridHeader}>
           <span>#R</span>
