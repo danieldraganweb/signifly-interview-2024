@@ -9,7 +9,7 @@ export default function Scoreboard() {
   const { matches, loading } = useScoreboard();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <p>Loading...</p>;
   }
   // const teamColors: TeamColors = {
   //   "Team A": "#FFD700",
@@ -31,7 +31,13 @@ export default function Scoreboard() {
   return (
     <div className={styles.main}>
       <h1>Match Scoreboard</h1>
-      <Image src="/scoreboard.svg" alt="Leaderboard" width={200} height={200} />
+      <Image
+        src="/scoreboard.svg"
+        alt="Leaderboard"
+        width={200}
+        height={200}
+        priority
+      />
       <ul className={styles.scoreboard}>
         {sortedMatches.map((match) => (
           <li key={match.id} className={styles.matchCard}>

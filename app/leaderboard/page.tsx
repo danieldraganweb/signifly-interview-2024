@@ -9,7 +9,11 @@ export default function Leaderboard() {
   const { teams, loading } = useTeams();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <p>Loading...</p>
+      </div>
+    );
   }
 
   const sortedTeams = teams.sort(
@@ -25,12 +29,14 @@ export default function Leaderboard() {
           alt="Leaderboard"
           width={200}
           height={200}
+          priority
         />
         <Image
           src="/karate-winner.svg"
           alt="Leaderboard"
           width={100}
           height={100}
+          priority
         />
       </div>
       <div className={styles.leaderboardGrid}>

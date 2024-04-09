@@ -21,7 +21,7 @@ export default function useTeams() {
     const teams = await table.select().all();
     setTeams(teams as any);
     setLoading(false);
-    console.log(teams);
+    // console.log(teams);
   };
 
   // Fetch data when the component mounts

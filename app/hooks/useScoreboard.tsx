@@ -21,7 +21,7 @@ export default function useScoreboard() {
     const matches = await table.select().all();
     setMatches(matches as any);
     setLoading(false);
-    console.log(matches);
+    // console.log(matches);
   };
 
   // Fetch data when the component mounts
