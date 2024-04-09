@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./scoreboard.module.scss";
 import useScoreboard from "../hooks/useScoreboard";
 import Image from "next/image";
+// import { TeamColors } from "../types";
 
 export default function Scoreboard() {
   const { matches, loading } = useScoreboard();
@@ -10,6 +11,16 @@ export default function Scoreboard() {
   if (loading) {
     return <div>Loading...</div>;
   }
+  // const teamColors: TeamColors = {
+  //   "Team A": "#FFD700",
+  //   "Team B": "#C0C0C0",
+  //   "Team C": "#CD7F32",
+  //   "Team D": "#FF0000",
+  //   "Team E": "#008000",
+  //   "Team F": "#0000FF",
+  //   "Team G": "#800080",
+  //   "Team H": "#FFA500",
+  // };
 
   const sortedMatches = matches.sort((a, b) => {
     const matchNumberA = parseInt(a.fields.Name.replace(/^\D+/g, ""), 10);
@@ -25,6 +36,7 @@ export default function Scoreboard() {
         {sortedMatches.map((match) => (
           <li key={match.id} className={styles.matchCard}>
             <h3 className={styles.matchHeader}>{match.fields.Name}</h3>
+            <h3 className={styles.date}>{match.createdTime} </h3>
             <div className={styles.teamAndScore}>
               <span className={styles.teamName}>
                 {match.fields["Team Name (from Team A)"]}
