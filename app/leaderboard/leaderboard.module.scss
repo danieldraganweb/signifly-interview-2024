@@ -15,6 +15,20 @@
     }
 }
 
+.leaderboardImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+
+    img {
+        width: 160px;
+        height: auto;
+        // padding: 1em 1em 2em 1em;
+    }
+}
+
 .leaderboardGrid {
     display: flex;
     flex-direction: column;

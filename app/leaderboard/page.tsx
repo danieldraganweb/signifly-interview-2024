@@ -20,13 +20,20 @@ export default function Leaderboard() {
   return (
     <div className={styles.leaderboardContainer}>
       <h1>Leaderboard</h1>
-      <Image
-        src="/football-winner.svg"
-        alt="Leaderboard"
-        width={200}
-        height={200}
-      />
-
+      <div className={styles.leaderboardImages}>
+        <Image
+          src="/football-winner.svg"
+          alt="Leaderboard"
+          width={200}
+          height={200}
+        />
+        <Image
+          src="/karate-winner.svg"
+          alt="Leaderboard"
+          width={100}
+          height={100}
+        />
+      </div>
       <div className={styles.leaderboardGrid}>
         <div className={styles.gridHeader}>
           <span>#R</span>
