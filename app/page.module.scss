@@ -6,9 +6,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   width: 100%;
   max-width: 1440px;
+  overflow: hidden;
 
   h1 {
     font-size: 2em;
@@ -97,6 +97,24 @@
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
     gap: 1rem;
+    background-color: #4c8527;
+  }
+
+  button:hover {
+    background-color: #3a6e20;
+    transform: scale(1.05);
+  }
+
+  button:active {
+    background-color: #2f5b1a;
+
+
+  }
+
+  button:disabled {
+    background-color: #b63535;
+    color: #ffffff;
+    cursor: not-allowed;
   }
 }
 
@@ -111,6 +129,11 @@
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
     margin-top: 1rem;
+  }
+
+  button:hover {
+    background-color: #b63535;
+    transform: scale(1.05);
   }
 }
 
