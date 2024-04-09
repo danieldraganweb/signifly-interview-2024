@@ -8,7 +8,6 @@ type NavbarProps = {};
 const Navbar: React.FC<NavbarProps> = () => {
   return (
     <div className={styles["navbar-container"]}>
-      <h1 className={styles["navbar-title"]}>Signifly Foosball Tournament</h1>
       <nav className={styles["navbar"]}>
         <ul>
           <li>
@@ -39,6 +38,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           </li>
         </ul>
       </nav>
+      <h1 className={styles["navbar-title"]}>Signifly Foosball Tournament</h1>
     </div>
   );
 };
