@@ -110,7 +110,7 @@
 
 @media screen and (min-width: 768px) {
     .main {
-        padding: 0 20px;
+        padding: 0;
     }
 
     .scoreboard {
@@ -144,7 +144,7 @@
     .teamName,
     .matchScore {
         flex: none;
-        margin: 0 10px;
+        margin: 0 8px;
         font-size: $font-size-desktop;
     }
 
