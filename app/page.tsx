@@ -17,7 +17,7 @@ export default function Home() {
         const updatedScore = currentScore + (increment ? 1 : -1);
         if (updatedScore >= 10) {
           setWinningTeam("Team A wins!");
-          setIsAnimationPaused(true); // Optionally pause animation when a team wins
+          setIsAnimationPaused(true);
         }
         return Math.max(0, Math.min(updatedScore, 10));
       });
@@ -26,7 +26,7 @@ export default function Home() {
         const updatedScore = currentScore + (increment ? 1 : -1);
         if (updatedScore >= 10) {
           setWinningTeam("Team B wins!");
-          setIsAnimationPaused(true); // Optionally pause animation when a team wins
+          setIsAnimationPaused(true);
         }
         return Math.max(0, Math.min(updatedScore, 10));
       });
@@ -37,8 +37,8 @@ export default function Home() {
     setTeamAScore(0);
     setTeamBScore(0);
     setWinningTeam("");
-    setIsAnimationPaused(false); // Reset animation state
-    setHeadingText("Insert Coin"); // Reset heading text
+    setIsAnimationPaused(false);
+    setHeadingText("Insert Coin");
   };
 
   const formatScore = (score: number) => score.toString().padStart(2, "0");
@@ -63,31 +63,31 @@ export default function Home() {
           <h3>Team A</h3>
           <h2>{formatScore(teamAScore)}</h2>
           <div className={styles.buttonWrapper}>
-            <button onClick={() => handleTeamScore("A", true)}>+</button>
-            <button
+            <Button onClick={() => handleTeamScore("A", true)}>+</Button>
+            <Button
               onClick={() => handleTeamScore("A", false)}
               disabled={teamAScore <= 0}
             >
               -
-            </button>
+            </Button>
           </div>
         </div>
         <div className={styles.wrapper}>
           <h3>Team B</h3>
           <h2>{formatScore(teamBScore)}</h2>
           <div className={styles.buttonWrapper}>
-            <button onClick={() => handleTeamScore("B", true)}>+</button>
-            <button
+            <Button onClick={() => handleTeamScore("B", true)}>+</Button>
+            <Button
               onClick={() => handleTeamScore("B", false)}
               disabled={teamBScore <= 0}
             >
               -
-            </button>
+            </Button>
           </div>
         </div>
       </div>
       <div className={styles.resetButton}>
-        <button onClick={handleReset}>Reset</button>
+        <Button onClick={handleReset}>Reset</Button>
       </div>
     </main>
   );

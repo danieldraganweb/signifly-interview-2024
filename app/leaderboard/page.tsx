@@ -6,13 +6,12 @@ import useTeams from "../hooks/useTeams";
 import Image from "next/image";
 
 export default function Leaderboard() {
-  const { teams, loading } = useTeams(); // Assuming useTeams returns the correct type
+  const { teams, loading } = useTeams();
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  // Assuming `teams` directly returns an array of objects conforming to TeamFields type
   const sortedTeams = teams.sort(
     (a, b) => b.fields["Total points"] - a.fields["Total points"]
   );

@@ -68,16 +68,13 @@
         flex: 0.5;
     }
 
-    // Rank might not need as much space
     &:nth-child(6) {
         flex: 1.5;
     }
-
-    // Points might need more space
 }
 
 @media screen and (min-width: 768px) {
     .leaderboardGrid {
-        max-width: 1200px; // Or any max-width you find appropriate for larger screens
+        max-width: 1200px;
     }
 }

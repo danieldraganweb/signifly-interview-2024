@@ -13,7 +13,6 @@
     h1 {
         color: #4c8527;
         font-size: 40px;
-        // margin-bottom: 30px;
     }
 
     img {
@@ -64,7 +63,7 @@
     flex: 0 1 auto;
     font-family: var(--font-orbitron), sans-serif;
     font-size: $font-size-mobile-wide;
-    margin: 0 20px; // Ensures space around the score
+    margin: 0 20px;
     text-align: center;
 }
 
@@ -115,7 +114,7 @@
     .scoreboard {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        grid-gap: 20px; // Adjust based on your spacing preference
+        grid-gap: 20px;
         justify-content: center;
         align-items: center;
     }
@@ -126,24 +125,24 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0; // Remove margin-bottom for grid layout
+        margin: 0;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 255, 255, 0.5);
     }
 
     .matchHeader,
     .teamName {
-        font-size: $font-size-desktop; // Adjust the font size for larger screens
+        font-size: $font-size-desktop;
     }
 
     .matchScore,
     .playerNames {
-        font-size: $font-size-desktop; // Adjust the font size for larger screens
+        font-size: $font-size-desktop;
     }
 
     .teamName,
     .matchScore {
-        flex: none; // Override previous flex settings
-        margin: 0 10px; // Reduced margin for grid layout
+        flex: none;
+        margin: 0 10px;
         font-size: $font-size-desktop;
     }
 
@@ -157,6 +156,6 @@
     .playersTeamB {
         padding-left: 0.5em;
         align-items: center;
-        text-align: center; // Ensure text alignment is consistent in the grid layout
+        text-align: center;
     }
 }
