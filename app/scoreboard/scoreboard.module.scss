@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 0 10px;
     width: 100%;
     max-width: 1440px;
 
@@ -19,7 +19,7 @@
     img {
         width: 256px;
         height: auto;
-        padding: 2em;
+        padding: 1em 1em 2em 1em;
     }
 }
 
@@ -33,7 +33,7 @@
 .matchCard {
     border: 1px solid #ccc;
     border-radius: 4px;
-    padding: 1rem 0.5rem;
+    padding: 2rem 0.5rem;
     margin-bottom: 2rem;
     width: 100%;
     max-width: 1440px;
@@ -49,14 +49,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .teamName {
     flex: 1;
     font-weight: bold;
     color: #4c8527;
-    font-size: $font-size-mobile-wide;
+    font-size: $font-size-tablet;
     text-align: center;
 }
 
@@ -72,7 +72,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
     gap: 6em;
 }
@@ -81,36 +81,35 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: left;
-    padding-left: 1em;
-
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    // padding-left: 1em;
 }
 
 .playersTeamB {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: left;
-    padding-left: 1em;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    // padding-left: 1em;
 }
 
 .playersTeamA p {
-    text-align: left;
+    text-align: center;
     font-size: $font-size-mobile;
 }
 
 .playersTeamB p {
-    text-align: left;
+    text-align: center;
     font-size: $font-size-mobile;
 }
 
 @media screen and (min-width: 768px) {
     .main {
-        padding: 20px;
+        padding: 0 20px;
     }
 
     .scoreboard {
@@ -118,11 +117,11 @@
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         grid-gap: 20px; // Adjust based on your spacing preference
         justify-content: center;
-        align-items: start;
+        align-items: center;
     }
 
     .matchCard {
-        padding: 1rem;
+        padding: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -138,13 +137,14 @@
 
     .matchScore,
     .playerNames {
-        font-size: $font-size-mobile-wide; // Adjust the font size for larger screens
+        font-size: $font-size-desktop; // Adjust the font size for larger screens
     }
 
     .teamName,
     .matchScore {
         flex: none; // Override previous flex settings
         margin: 0 10px; // Reduced margin for grid layout
+        font-size: $font-size-desktop;
     }
 
     .playerNames {
@@ -156,7 +156,7 @@
     .playersTeamA,
     .playersTeamB {
         padding-left: 0.5em;
-        align-items: flex-start;
+        align-items: center;
         text-align: center; // Ensure text alignment is consistent in the grid layout
     }
 }
