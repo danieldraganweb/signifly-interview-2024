@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./scoreboard.module.scss";
 import useScoreboard from "../hooks/useScoreboard";
 import Image from "next/image";
-// import { TeamColors } from "../types";
+
 
 export default function Scoreboard() {
   const { matches, loading } = useScoreboard();
@@ -11,16 +11,19 @@ export default function Scoreboard() {
   if (loading) {
     return <p>Loading...</p>;
   }
-  // const teamColors: TeamColors = {
-  //   "Team A": "#FFD700",
-  //   "Team B": "#C0C0C0",
-  //   "Team C": "#CD7F32",
-  //   "Team D": "#FF0000",
-  //   "Team E": "#008000",
-  //   "Team F": "#0000FF",
-  //   "Team G": "#800080",
-  //   "Team H": "#FFA500",
-  // };
+
+  const teamColors = {
+    "Shadow Strikers": "#FFD700",
+    "Light Sabers": "#C0C0C0",
+    "Quantum Quicks": "#CD7F32",
+    "Blizzard Blasters": "#FF0000",
+    "The Foosballers": "#008000",
+    "Galactic Goals": "#0000FF",
+    "Turbo Tacklers": "#800080",
+    "Golden Strikers": "#FFA500",
+  };
+
+
 
   const sortedMatches = matches.sort((a, b) => {
     const matchNumberA = parseInt(a.fields.Name.replace(/^\D+/g, ""), 10);
@@ -39,33 +42,43 @@ export default function Scoreboard() {
         priority
       />
       <ul className={styles.scoreboard}>
-        {sortedMatches.map((match) => (
-          <li key={match.id} className={styles.matchCard}>
-            <h3 className={styles.matchHeader}>{match.fields.Name}</h3>
-            <h3 className={styles.date}>{match.createdTime} </h3>
-            <div className={styles.teamAndScore}>
-              <span className={styles.teamName}>
-                {match.fields["Team Name (from Team A)"]}
-              </span>
-              <span className={styles.matchScore}>
-                {match.fields["Team A Score"]} - {match.fields["Team B Score"]}
-              </span>
-              <span className={styles.teamName}>
-                {match.fields["Team Name (from Team B)"]}
-              </span>
-            </div>
-            <div className={styles.playerNames}>
-              <div className={styles.playersTeamA}>
-                <p>P1:{match.fields["Player 1 (from Team A)"]}</p>
-                <p>P2:{match.fields["Player 2 (from Team A)"]}</p>
+        {sortedMatches.map((match) => {
+          const teamNameA = match.fields["Team Name (from Team A)"] as unknown as keyof typeof teamColors;
+          const teamNameB = match.fields["Team Name (from Team B)"] as unknown as keyof typeof teamColors;
+
+          return (
+            <li key={match.id} className={styles.matchCard}>
+              <h3 className={styles.matchHeader}>{match.fields.Name}</h3>
+              <h3 className={styles.date}>{match.createdTime} </h3>
+              <div className={styles.teamAndScore}>
+                <span className={styles.teamName}
+                  style={{ color: teamColors[teamNameA] }}
+
+                >
+                  {teamNameA}
+                </span>
+                <span className={styles.matchScore}>
+                  {match.fields["Team A Score"]} - {match.fields["Team B Score"]}
+                </span>
+                <span className={styles.teamName}
+                  style={{ color: teamColors[teamNameB] }}
+                >
+                  {teamNameB}
+                </span>
               </div>
-              <div className={styles.playersTeamB}>
-                <p>P1:{match.fields["Player 1 (from Team B)"]}</p>
-                <p>P2:{match.fields["Player 2 (from Team B)"]}</p>
+              <div className={styles.playerNames}>
+                <div className={styles.playersTeamA}>
+                  <p>P1:{match.fields["Player 1 (from Team A)"]}</p>
+                  <p>P2:{match.fields["Player 2 (from Team A)"]}</p>
+                </div>
+                <div className={styles.playersTeamB}>
+                  <p>P1:{match.fields["Player 1 (from Team B)"]}</p>
+                  <p>P2:{match.fields["Player 2 (from Team B)"]}</p>
+                </div>
               </div>
-            </div>
-          </li>
-        ))}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

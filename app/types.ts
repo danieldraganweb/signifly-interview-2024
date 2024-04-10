@@ -35,15 +35,15 @@ export type MatchRecord = {
 };
 
 export type MatchFields = {
-  "Team Name (from Team A)": string[];
-  "Team A": string[];
-  "Player 1 (from Team A)": string[];
-  "Player 2 (from Team A)": string[];
+  "Team Name (from Team A)": string;
+  "Team A": string;
+  "Player 1 (from Team A)": string;
+  "Player 2 (from Team A)": string;
   "Team A Score": number;
-  "Team Name (from Team B)": string[];
-  "Team B": string[];
-  "Player 1 (from Team B)": string[];
-  "Player 2 (from Team B)": string[];
+  "Team Name (from Team B)": string;
+  "Team B": string;
+  "Player 1 (from Team B)": string;
+  "Player 2 (from Team B)": string;
   "Team B Score": number;
   Name: string;
   "Points Awarded Team A": number;
