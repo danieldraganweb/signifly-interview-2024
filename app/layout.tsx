@@ -43,15 +43,7 @@ export default function RootLayout({
       >
         <body>
           <Navbar />
-          <Suspense
-            fallback={
-              <div>
-                <p>Loading...</p>
-              </div>
-            }
-          >
             {children}
-          </Suspense>
         </body>
       </html>
     </>
