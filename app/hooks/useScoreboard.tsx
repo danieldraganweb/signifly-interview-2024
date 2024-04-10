@@ -4,7 +4,6 @@ import { MatchFields } from "../types";
 import Airtable from "airtable";
 
 // Airtable Configuration
-// console.log("Airtable API Key:", process.env.NEXT_PUBLIC_AIRTABLE_API_KEY);
 Airtable.configure({ apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY || "" });
 const table = Airtable.base(
   process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID || ""
@@ -21,7 +20,6 @@ export default function useScoreboard() {
     const matches = await table.select().all();
     setMatches(matches as any);
     setLoading(false);
-    // console.log(matches);
   };
 
   // Fetch data when the component mounts

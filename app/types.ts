@@ -17,7 +17,7 @@ export type TeamFields = {
   "Total points": number;
   Wins: number;
   Losses: number;
-  "Matches as Team A"?: string[]; // Optional since it's not present in all records
+  "Matches as Team A"?: string[];
   id: string;
   createdTime: string;
   fields: TeamFields;
@@ -56,7 +56,7 @@ export type MatchFields = {
 
 export type ScoreboardResponse = {
   records: MatchRecord[];
-  offset: string; // Useful for pagination if your API response includes it
+  offset: string; // Pagination offset
 };
 
 export type ButtonProps = {
@@ -64,10 +64,9 @@ export type ButtonProps = {
   onClick?: () => void;
   disabled?: boolean;
 };
+
 export type TeamColors = {
   [teamName: string]: string;
-
-  // Add more team colors here
   "Team A": string;
   "Team B": string;
   "Team C": string;
