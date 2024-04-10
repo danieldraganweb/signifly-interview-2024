@@ -13,17 +13,15 @@ export default function Scoreboard() {
   }
 
   const teamColors = {
-    "Shadow Strikers": "#FFD700",
-    "Light Sabers": "#C0C0C0",
-    "Quantum Quicks": "#CD7F32",
-    "Blizzard Blasters": "#FF0000",
-    "The Foosballers": "#008000",
-    "Galactic Goals": "#0000FF",
-    "Turbo Tacklers": "#800080",
-    "Golden Strikers": "#FFA500",
+    "Shadow Strikers": "#8479E1",
+    "Light Sabers": "#B4ECE3",
+    "Quantum Quicks": "#EA5E5E",
+    "Blizzard Blasters": "#f0ad4e",
+    "The Foosballers": "#69AEFF",
+    "Galactic Goals": "#E0F6AA",
+    "Turbo Tacklers": "#76BA99",
+    "Golden Strikers": "#FFA5A5",
   };
-
-
 
   const sortedMatches = matches.sort((a, b) => {
     const matchNumberA = parseInt(a.fields.Name.replace(/^\D+/g, ""), 10);
