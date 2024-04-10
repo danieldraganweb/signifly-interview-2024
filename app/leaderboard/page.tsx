@@ -1,20 +1,28 @@
-"use client";
 
 import React from "react";
 import styles from "./leaderboard.module.scss";
 import useTeams from "../hooks/useTeams";
 import Image from "next/image";
+import { TeamFields } from "../types";
+import Airtable from "airtable";
 
-export default function Leaderboard() {
-  const { teams, loading } = useTeams();
+Airtable.configure({ apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY || "" });
+const table = Airtable.base(
+  process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID || ""
+).table("Teams");
 
-  if (loading) {
-    return (
-      <div>
-        <p>Loading...</p>
-      </div>
-    );
-  }
+export default async function Leaderboard() {
+
+  // const { teams, loading } = useTeams();
+  const teams = await table.select().all() as unknown as TeamFields[];
+
+  // if (loading) {
+  //   return (
+  //     <div>
+  //       <p>Loading...</p>
+  //     </div>
+  //   );
+  // }
 
   const sortedTeams = teams.sort(
     (a, b) => b.fields["Total points"] - a.fields["Total points"]
