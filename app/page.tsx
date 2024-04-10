@@ -44,6 +44,8 @@ export default function Home() {
     setWinningTeam("");
     setIsAnimationPaused(false);
     setHeadingText("Insert Coin");
+    setTeamAName("");
+    setTeamBName("");
   };
 
   const formatScore = (score: number) => score.toString().padStart(2, "0");
