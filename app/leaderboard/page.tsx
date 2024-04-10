@@ -51,7 +51,7 @@ export default function Leaderboard() {
         {sortedTeams.map((team, index) => (
           <div className={styles.gridRow} key={team.id}>
             <span>#{index + 1}</span>
-            <span>{team.fields["Team Name"]}</span>
+            <span className={styles.teamName}>{team.fields["Team Name"]}</span>
             <span>{team.fields["Total Matches Played"]}</span>
             <span>{team.fields.Wins}</span>
             <span>{team.fields.Losses}</span>
