@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Orbitron, Kalam, Press_Start_2P } from "next/font/google";
 import "./globals.scss";
 import Navbar from "./components/Header/Navbar";
-import { Suspense } from "react";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -43,7 +42,7 @@ export default function RootLayout({
       >
         <body>
           <Navbar />
-            {children}
+          {children}
         </body>
       </html>
     </>
