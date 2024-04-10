@@ -5,14 +5,15 @@ import Button from "./components/Buttons/Button";
 import useTeams from "./hooks/useTeams";
 
 export default function Home() {
+  const [teamAName, setTeamAName] = useState("");
+  const [teamBName, setTeamBName] = useState("");
+  const { teams, loading } = useTeams();
   const [teamAScore, setTeamAScore] = useState(0);
   const [teamBScore, setTeamBScore] = useState(0);
   const [winningTeam, setWinningTeam] = useState("");
   const [isAnimationPaused, setIsAnimationPaused] = useState(false);
   const [headingText, setHeadingText] = useState("Insert Coin");
-  const [teamAName, setTeamAName] = useState("");
-  const [teamBName, setTeamBName] = useState("");
-  const { teams, loading } = useTeams();
+
 
   const handleTeamScore = (team: "A" | "B", increment: boolean) => {
     setWinningTeam("");
@@ -50,9 +51,8 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <h1
-        className={`${styles.heading} ${
-          isAnimationPaused ? styles.paused : ""
-        }`}
+        className={`${styles.heading} ${isAnimationPaused ? styles.paused : ""
+          }`}
         onClick={() => {
           setIsAnimationPaused(!isAnimationPaused);
           setHeadingText("Start Game");
@@ -70,6 +70,7 @@ export default function Home() {
             onChange={(e) => setTeamAName(e.target.value)}
             disabled={loading}
             className={styles.select}
+            aria-label="Select Team A"
           >
             <option value="">Select Team A</option>
             {teams.map((team) => (
@@ -80,10 +81,14 @@ export default function Home() {
           </select>
           <h2>{formatScore(teamAScore)}</h2>
           <div className={styles.buttonWrapper}>
-            <Button onClick={() => handleTeamScore("A", true)}>+</Button>
+            <Button
+              onClick={() => handleTeamScore("A", true)}
+              aria-label="Increment Team A Score"
+            >+</Button>
             <Button
               onClick={() => handleTeamScore("A", false)}
               disabled={teamAScore <= 0}
+              aria-label="Decrement Team A Score"
             >
               -
             </Button>
@@ -97,6 +102,7 @@ export default function Home() {
             onChange={(e) => setTeamBName(e.target.value)}
             disabled={loading}
             className={styles.select}
+            aria-label="Select Team B"
           >
             <option value="">Select Team B</option>
             {teams.map((team) => (
@@ -107,10 +113,14 @@ export default function Home() {
           </select>
           <h2>{formatScore(teamBScore)}</h2>
           <div className={styles.buttonWrapper}>
-            <Button onClick={() => handleTeamScore("B", true)}>+</Button>
+            <Button
+              onClick={() => handleTeamScore("B", true)}
+              aria-label="Increment Team B Score"
+            >+</Button>
             <Button
               onClick={() => handleTeamScore("B", false)}
               disabled={teamBScore <= 0}
+              aria-label="Decrement Team B Score"
             >
               -
             </Button>
@@ -118,7 +128,8 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.resetButton}>
-        <Button onClick={handleReset}>Reset</Button>
+        <Button onClick={handleReset} aria-label="Reset Game"
+        >Reset</Button>
       </div>
     </main>
   );
