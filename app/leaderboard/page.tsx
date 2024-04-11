@@ -1,25 +1,20 @@
-"use client";
 
 import React from "react";
 import styles from "./leaderboard.module.scss";
-import useTeams from "../hooks/useTeams";
 import Image from "next/image";
+import fetchLeaderboardData from "../../utils/airtable";
 
-export default function Leaderboard() {
-  const { teams, loading } = useTeams();
 
-  if (loading) {
-    return (
-      <div>
-        <p>Loading...</p>
-      </div>
-    );
-  }
 
+export default async function Leaderboard() {
+
+
+  const teams = await fetchLeaderboardData();
   const sortedTeams = teams.sort(
     (a, b) => b.fields["Total points"] - a.fields["Total points"]
   );
 
+  
   return (
     <div className={styles.leaderboardContainer}>
       <h1>Leaderboard</h1>

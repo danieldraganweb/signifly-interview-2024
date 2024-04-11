@@ -2,13 +2,8 @@
 import { useEffect, useState } from "react";
 import { TeamFields } from "../types";
 import Airtable from "airtable";
+import fetchLeaderboardData from "../../utils/airtable";
 
-// Airtable Configuration
-// console.log("Airtable API Key:", process.env.NEXT_PUBLIC_AIRTABLE_API_KEY);
-Airtable.configure({ apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY || "" });
-const table = Airtable.base(
-  process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID || ""
-).table("Teams");
 
 // Custom Hook
 export default function useTeams() {
@@ -18,7 +13,7 @@ export default function useTeams() {
   // Fetch data from Airtable
   const getTeams = async () => {
     setLoading(true);
-    const teams = await table.select().all();
+    const teams = await fetchLeaderboardData();
     setTeams(teams as any);
     setLoading(false);
     // console.log(teams);
